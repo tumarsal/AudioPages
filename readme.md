@@ -3,24 +3,24 @@
 
 <ul>
 	<li> 
-		<a href="./login.html">Страница Login</a>
+		<a href="./app/login.html">Страница Login</a>
 	</li>
 	<li> 
-		<a href="./main.html">Страница subscriptions</a>
+		<a href="./app/main.html">Страница subscriptions</a>
 	</li>
 	<li> 
-		<a href="./create_channel.html">Страница Создания канала</a>
+		<a href="./app/create_channel.html">Страница Создания канала</a>
 	</li>
 	<li> 
-		<a href="./later.html">Страница Позже</a>
+		<a href="./app/later.html">Страница Позже</a>
 	</li>
 	<li>
-		<a href="./main.html">Страница Main</a>	
+		<a href="./app/main.html">Страница Main</a>	
 	</li>
 	<li>
-		<a href="./create_stream.html">Страница Create Stream</a>	
+		<a href="./app/create_stream.html">Страница Create Stream</a>	
 	</li>
 	<li>
-		<a href="./player.html">Страница Player</a>	
+		<a href="./app/player.html">Страница Player</a>	
 	</li>
 </ul>

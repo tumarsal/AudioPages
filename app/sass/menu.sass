@@ -1,0 +1,32 @@
+
+.side-menu
+	width: 300px 
+	position: absolute
+	display: block
+	height: 100vh
+	margin-top: 68px
+	background: #373737
+	display: flex
+	flex-direction: column
+	justify-content: space-between 
+	
+	.menu 
+		padding: 35px
+		//min-height: 100vh
+		list-style-type: none 
+		-webkit-font-smoothing: antialiased 
+		transform-origin: 0% 0% 
+		transform: translate(-100%, 0) 
+		transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0)
+		
+
+		li 
+			padding: 10px 0 
+			font-size: 22px
+
+	.small-menu
+		padding: 35px
+
+.open
+	.menu
+		transform: none 

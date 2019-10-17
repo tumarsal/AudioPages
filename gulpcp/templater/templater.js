@@ -125,17 +125,19 @@ Templator.prototype.insetTags = function(content,tags){
   }
   return result;
 }
-Templator.prototype.processContent = function (content) {
+Templator.prototype.processContent = function (content,filename) {
   var buildTag = this.options.buildTag;
   var defineTag = this.options.defineTag;
   var regMark = new RegExp('<!--\\s*' + buildTag + ':([^\\s]+)\\s*-->', 'g');
   var opmap = this.options.opmap;
+  content = content.replace("{{__filename__}}",filename);
   res = content.replace(regMark, function (match, name) {
     var find = opmap[name];
     
    // console.log('insert '+ name+ " find" +find)
     return find ? find : match;
   });
+  res = res.replace("{{__filename__}}",filename);
   return res;
 };
 

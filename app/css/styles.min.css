@@ -1,3 +1,18 @@
+.channel .logo {
+  height: 180px; }
+  .channel .logo img {
+    width: 100%;
+    height: 180px; }
+
+.rounded {
+  border-radius: 50%; }
+
+.round {
+  border-radius: 50%; }
+
+.section {
+  margin-top: 30px; }
+
 * {
   background-color: rgba(255, 0, 0, 0.2); }
 
@@ -11563,22 +11578,46 @@ a.text-dark:hover, a.text-dark:focus {
   display: block;
   margin: auto; }
 
+.track-list .pull-right {
+  margin-left: auto;
+  text-align: right; }
+
+.rounded {
+  border-radius: 50%; }
+
+.round {
+  border-radius: 50%; }
+
+.section {
+  margin-top: 30px; }
+
 .top-menu {
   background: #373737; }
 
 .main-content {
   margin-left: 300px; }
 
+.d-block {
+  display: block; }
+
 .margin-auto {
   margin-right: auto;
   margin-left: auto;
   display: block; }
+
+.container-fluid {
+  padding-right: 0px;
+  padding-left: 0px; }
 
 .padding-top {
   padding-top: 30px; }
 
 .bg-white {
   background: white; }
+
+.bg-black {
+  background: black;
+  color: white; }
 
 .side-menu {
   width: 300px;
@@ -11605,6 +11644,10 @@ a.text-dark:hover, a.text-dark:focus {
 
 .open .menu {
   transform: none; }
+
+.track-list .pull-right {
+  margin-left: auto;
+  text-align: right; }
 
 .player .prev li {
   margin: auto 0px; }

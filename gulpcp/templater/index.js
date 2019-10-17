@@ -15,7 +15,8 @@ function gulpTemplator (options) {
     }
 
     if (file.isBuffer()) {
-      content = templator.processContent(file.contents.toString(enc));
+      var fileName = file.relative.split(".")[0]
+      content = templator.processContent(file.contents.toString(enc),fileName);
       file.contents = new Buffer(content, enc);
     }
 

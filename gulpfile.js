@@ -13,13 +13,28 @@ var gulp         = require('gulp'),
 		ctemplate = require('./gulpcp/templater/index');
 		template = require('gulp-template-html');
 		glob = require('glob');
-
+		webpack = require('webpack-stream');
 
 // Local Server
 gulp.task('browser-sync', function() {
 	browserSync({
 		server: {
-			baseDir: 'app'
+			baseDir: 'app',
+			middleware: [
+				function (req, res, next) {
+					var folder = "/html/result";
+					if(req.url.endsWith(".html")||req.url.endsWith(".html/")){
+						req.url = folder+req.url;
+					}
+					if(req.url=="/"){
+						req.url = folder+"/index.html"
+					}
+					if(req.url.endsWith("/")){
+						req.url = req.url.substr(0,req.url.length-1);
+					}
+					next()
+				}]
+			
 		},
 		notify: false,
 		// online: false, // Work offline without internet connection
@@ -46,13 +61,26 @@ gulp.task('styles', function() {
 // Scripts & JS Libraries
 gulp.task('scripts', function() {
 	return gulp.src([
-		// 'node_modules/jquery/dist/jquery.min.js', // Optional jQuery plug-in (npm i --save-dev jquery)
+		'node_modules/jquery/dist/jquery.min.js', // Optional jQuery plug-in (npm i --save-dev jquery)
 		'app/js/_lazy.js', // JS library plug-in example
 		'app/js/_custom.js', // Custom scripts. Always at the end
 		])
 	.pipe(concat('scripts.min.js'))
 //	.pipe(uglify()) // Minify js (opt.)
 	.pipe(gulp.dest('app/js'))
+	.pipe(browserSync.reload({ stream: true }))
+});
+gulp.task('scripts_old', function() {
+	return gulp.src('app/script/**/*.js')
+	.pipe(webpack(
+		{
+			devtool: 'source-map',
+			output : {
+				filename : '[name]/[name].js'    
+			  }
+		}
+	))
+	.pipe(gulp.dest('app/js_test'))
 	.pipe(browserSync.reload({ stream: true }))
 });
 
@@ -114,15 +142,23 @@ gulp.task('rsync', function() {
 });*/
 //gulp.task('default', function () {
 gulp.task('template', function () {
-	var templater = ctemplate('app/html2/content/*.html')
-    return gulp.src('app/html2/template/*.html')
+	var templater = ctemplate('app/html/content/*.html')
+    return gulp.src('app/html/template/*.html')
       .pipe(templater)
-      .pipe(gulp.dest('app'));
+      .pipe(gulp.dest('app/html/result'));
+//      .pipe(gulp.dest('app'));
 });
+gulp.task('publsh', function () {
+	var templater = ctemplate('app/html/content/*.html')
+    return gulp.src('app/html/template/*.html')
+      .pipe(templater)
+       .pipe(gulp.dest('app'));
+});
+
 gulp.task('watch', function() {
 	gulp.watch('app/sass/**/*.sass', gulp.parallel('styles'));
 	gulp.watch(['libs/**/*.js', 'app/js/_custom.js'], gulp.parallel('scripts'));
-	gulp.watch('app/*.html', gulp.parallel('code'));
+	gulp.watch('app/html/result/*.html', gulp.parallel('code'));
 	gulp.watch('app/html/content/*.html', gulp.parallel('template'));
 	gulp.watch('app/html/template/*.html', gulp.parallel('template'));
 	

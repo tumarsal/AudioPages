@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<title>OptimizedHTML 5</title>
+
+<meta name="viewport" content="width=device-width">
+
+<link rel="icon" href="img/favicon.png">
+<meta property="og:image" content="img/@1x/preview.jpg">
+
+<base href="/">
+<meta charset="utf-8">
+
+<meta name="description" content="AudioMUG">
+
+	<link rel="stylesheet" href="css/styles.min.css">
+	
+</head>
+
+<body>
+
+
+
+	<!-- Custom HTML / Remove before use -->
+	<div class="container-fluid">
+
+		<nav role="navigation" id="side-menu" class="side-menu open">
+    <div id="menu" class="menu">
+
+        <div class="menu-content">
+
+            <ul>
+                <a href="/main.html">
+                    <li>Главная</li>
+                </a>
+
+                <a href="/messages.html">
+                    <li>Сообщение</li>
+                </a>
+                <a href="/subscriptions.html">
+                    <li>Подписки</li>
+                </a>
+                <a href="/later.html">
+                    <li>Послушать позже</li>
+                </a>
+                <a href="/like.html">
+                    <li>Понравилось</li>
+                </a>
+            </ul>
+
+        </div>
+
+        <div class="small-menu">
+            <ul>
+                <a href="">
+                    <li>
+                        О сервисе
+                    </li>
+                </a>
+                <a href="">
+                    <li>
+                        Справка
+                    </li>
+                </a>
+                <a href="">
+                    <li>
+                        Правообладатели
+                    </li>
+                </a>
+                <a href="">
+                    <li>
+                        Рекламодателям
+                    </li>
+                </a>
+                <a href="">
+                    <li>
+                        Связаться с нами
+                    </li>
+                </a>
+                <a href="">
+                    <li> Условия пользования
+                    </li>
+                </a>
+                <a href="">
+                    <li>Правила и безопасность
+                    </li>
+                </a>
+                <a href="">
+                    <li> Новые функции</li>
+                </a>
+            </ul>
+        </div>
+    </div>
+</nav>
+		<!--MENU START -->
+<nav class="navbar navbar-expand-lg navbar-light top-menu">
+
+
+
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+		<ul class="navbar-nav col-md-2 left-menu">
+			<li class="nav-item ">
+				<a class="navbar-brand" onclick="menuToggle()">
+					<i class="fas fa-bars  fa-2x"></i>
+				</a>
+			</li>
+			<li class="nav-item ">
+				<a class="nav-link" href="#">
+					<i class="fas fa-dot-circle fa-3x"></i>
+				</a>
+			</li>
+			<li class="nav-item ">
+				<a class="nav-link" href="#">
+					<i class="fas fa-bell fa-3x"></i>
+				</a>
+			</li>
+		</ul>
+
+		<ul class="navbar-nav col-md-3 search">
+			<li class="nav-item">
+				<form >
+						<div class="form-group">
+								<div class="input-group">
+									<input type="text" class="form-control" placeholder="Поиск"
+									 aria-describedby="basic-addon2">
+									<div class="input-group-append">
+										<span class="input-group-text" id="basic-addon2">Search</span>
+									</div>
+								</div>
+							</div>
+				
+				</form>
+			</li>
+		</ul>
+		<ul class="navbar-nav  col-md-5 player">
+
+
+			<li class="nav-item prev">
+				<a class="nav-link" href="#">
+					<i class="fas fa-caret-left fa-3x"></i>
+				</a>
+			</li>
+			<li class="nav-item play">
+				<a class="nav-link" href="#">
+					<i class="fas fa-play fa-3x"></i>
+				</a>
+			</li>
+			<li class="nav-item next">
+				<a class="nav-link" href="#">
+					<i class="fas fa-caret-left fa-3x fa-rotate-180"></i>
+				</a>
+			</li>
+			<li class="nav-item description">
+				<a class="nav-link" href="#">
+					Киркоров - Зайка моя
+				</a>
+			</li>
+
+		</ul>
+		<ul class="navbar-nav  col-md-2 right-menu">
+
+			<li class="nav-item user">
+				<a class="nav-link" href="#">
+					<i class="fas fa-circle fa-3x "></i>
+					<i class="fas fa-caret-down fa-3x" onclick="openModal('user_modal')"></i>
+					<div class="modal-menu" id="user_modal">
+						<div class="modal-content">
+
+							<a href="/login.html">
+								<button>Выйти</button>
+							</a>
+						</div>
+					</div>
+				</a>
+			</li>
+			<li class="nav-item services">
+				<a class="nav-link" href="#">
+					<i class="fas fa-border-all fa-3x" onclick="openModal('services_modal')"></i>
+					<div class="modal-menu" id="services_modal">
+						<div class="modal-content">
+
+						</div>
+					</div>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+<!--MENU END -->
+		
+		<div class="main-content">
+			<div class="channel">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="logo">
+                    <img src="https://picsum.photos/1200/180" alt="">
+                </div>
+            </div>
+        </div>
+    
+    
+        <div class="row">
+            <div class="col-md-3">
+    
+                <img src="https://picsum.photos/200/200" alt="" class="img round margin-auto">
+            </div>
+            <div class="col-md-9">
+                        <div class="row">
+                                        <div class="col-md-6">
+                                                        <h1>Название канала</h1>
+                                                        <p>Приветствие</p>
+                                                    </div>
+                                            
+                                                    <div class="col-md-6">
+                                                        <div>
+                                                            <a class="list-group-item" href="#">
+                                                                    <i class="fas fa-wallet fa-3x"
+                                                                    style="vertical-align: middle;"
+                                                                    ></i> 
+                                                                
+                                                                &nbsp; 
+                                                                Донат</a>
+                                                        </div>
+                                                       
+                                                    </div>
+        
+                            </div>
+                            <div class="row">
+                                    <div class="col-md-12">
+                                            kjkjkj
+                                    </div>
+                            </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-3" clone="4">
+                <div class="bg-black text-center">
+                    <h2>Аудиокнига</h2>
+                </div>
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>5</li>
+                    <li>4</li>
+                </ul>
+    
+            </div>
+        </div>
+    </div>
+		</div>
+
+	</div>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script src="./js/crender.js"></script>
+	<script src="js/scripts.min.js"></script>
+	
+</body>
+
+</html>
